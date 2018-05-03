@@ -1,0 +1,199 @@
+% This file was created with JabRef 2.10.
+% Encoding: UTF-8
+
+
+@Article{twostagehemt,
+  Title                    = {Two-Stage GaN HEMT Amplifier With Gate–Source Voltage Shaping for Efficiency Versus Bandwidth Enhancements},
+  Author                   = {A. Ramadan, et al.},
+  Journal                  = {IEEE Transactions on Microwave Theory and Techniques},
+  Year                     = {2011},
+  Pages                    = {699-706},
+  Volume                   = {59},
+
+  Doi                      = {10.1109/TMTT.2010.2095033},
+  Owner                    = {max},
+  Timestamp                = {2017.11.11}
+}
+
+@PhdThesis{Alt,
+  Title                    = {Ultra-Low Noise Inp HEMTs for Cryogenic Applications},
+  Author                   = {Andreas R. Alt},
+  School                   = {ETH ZURICH},
+  Year                     = {2013},
+
+  Owner                    = {max},
+  Timestamp                = {2017.11.11}
+}
+
+@Article{edelweiss,
+  Title                    = {EDELWEISS Read-out Electronics and Future Prospects},
+  Author                   = {B.Censier, et al.},
+  Journal                  = {J Low Temp Phys},
+  Year                     = {2012},
+  Pages                    = {645-651},
+  Volume                   = {167},
+
+  Doi                      = {10.1007/s10909-012-0568-9},
+  Owner                    = {max},
+  Timestamp                = {2017.11.11}
+}
+
+@Article{PAMELA,
+  Title                    = {PAMELA and dark matter},
+  Author                   = {Barger V., et. al},
+  Journal                  = {Physics Letters B},
+  Year                     = {2009},
+
+  Owner                    = {max},
+  Timestamp                = {2017.12.03}
+}
+
+@Article{Berg,
+  Title                    = {Dark matter candidates},
+  Author                   = {Lars Bergström},
+  Journal                  = {New Journal of Physics},
+  Year                     = {2009},
+  Number                   = {10},
+  Pages                    = {105006},
+  Volume                   = {11},
+
+  Abstract                 = {An overview is given of various dark matter candidates. Among the many suggestions given in the literature, axions, inert Higgs doublet, sterile neutrinos, supersymmetric particles and Kaluza–Klein particles are discussed. The situation has recently become very interesting with new results on antimatter in the cosmic rays having dark matter as one of the leading possible explanations. Problems arising from this explanation and possible solutions are discussed, and the importance of new measurements is emphasized. If the explanation is indeed dark matter, a whole new field of physics, with unusual although not impossible mass and interaction properties, may soon open itself to discovery.},
+  Url                      = {http://stacks.iop.org/1367-2630/11/i=10/a=105006}
+}
+
+@Article{BulletC,
+  Title                    = {A Direct Empirical Proof of the Existence of Dark Matter},
+  Author                   = {Douglas Clowe, et al.},
+  Journal                  = {The Astrophysical Journal Letters},
+  Year                     = {2006},
+  Number                   = {2},
+  Pages                    = {L109},
+  Volume                   = {648},
+
+  Abstract                 = {We present new weak-lensing observations of 1E 0657-558 ( z = 0.296), a unique cluster merger, that enable a direct detection of dark matter, independent of assumptions regarding the nature of the gravitational force law. Due to the collision of two clusters, the dissipationless stellar component and the fluid-like X-ray-emitting plasma are spatially segregated. By using both wide-field ground-based images and HST /ACS images of the cluster cores, we create gravitational lensing maps showing that the gravitational potential does not trace the plasma distribution, the dominant baryonic mass component, but rather approximately traces the distribution of galaxies. An 8 σ significance spatial offset of the center of the total mass from the center of the baryonic mass peaks cannot be explained with an alteration of the gravitational force law and thus proves that the majority of the matter in the system is unseen.},
+  Url                      = {http://stacks.iop.org/1538-4357/648/i=2/a=L109}
+}
+
+@Article{m33,
+  Title                    = {The extended rotation curve and the dark matter halo of M33},
+  Author                   = {E. Corbelli, P. Salucci},
+  Journal                  = {Monthly Notices of the Royal Astronomical Society},
+  Year                     = {2000},
+  Pages                    = {441-447},
+  Volume                   = {311},
+
+  Doi                      = {10.1046/j.1365-8711.2000.03075.x},
+  Owner                    = {max},
+  Timestamp                = {2017.11.11}
+}
+
+@Article{DMCandidates,
+  Title                    = {Particle dark matter: evidence, candidates and constraints},
+  Author                   = {Gianfranco Berton, et al.},
+  Journal                  = {Physics Reports},
+  Year                     = {2005},
+  Number                   = {5},
+  Pages                    = {279 - 390},
+  Volume                   = {405},
+
+  Doi                      = {https://doi.org/10.1016/j.physrep.2004.08.031},
+  ISSN                     = {0370-1573},
+  Url                      = {http://www.sciencedirect.com/science/article/pii/S0370157304003515}
+}
+
+@Article{Drewes,
+  Title                    = {THE PHENOMENOLOGY OF RIGHT HANDED NEUTRINOS},
+  Author                   = {Drewes Marco},
+  Journal                  = {International Journal of Modern Physics E},
+  Year                     = {2013},
+  Number                   = {08},
+  Pages                    = {1330019},
+  Volume                   = {22},
+
+  Doi                      = {10.1142/S0218301313300191},
+  Eprint                   = {http://www.worldscientific.com/doi/pdf/10.1142/S0218301313300191},
+  Url                      = {http://www.worldscientific.com/doi/abs/10.1142/S0218301313300191}
+}
+
+@PhdThesis{phipps,
+  Title                    = {Ionization Collection in Detectors of the Cryogenic Dark Matter Search},
+  Author                   = {Arran T. J. Phipps},
+  School                   = {University of California, Berkeley},
+  Year                     = {2016}
+}
+
+@Article{planckresults,
+  Title                    = {Planck 2015 results. I. Overview of products and scientific results},
+  Author                   = {R. Adam, et al.},
+  Journal                  = {Astronomy \& Astrophysics},
+  Year                     = {2016},
+  Volume                   = {594},
+
+  Doi                      = {10.1051/0004-6361/201527101},
+  Owner                    = {max},
+  Timestamp                = {2017.11.11}
+}
+
+@Article{Essig,
+  Title                    = {Direct Detection of Sub-GeV Dark Matter},
+  Author                   = {R. Essig, et al.},
+  Journal                  = {Phys. Rev. D},
+  Year                     = {2012},
+  Volume                   = {85},
+
+  Doi                      = {10.1103/PhysRevD.85.076007},
+  Owner                    = {max},
+  Timestamp                = {2017.11.11}
+}
+
+@Article{NGC,
+  Title                    = {Distribution of dark matter in the spiral galaxy NGC 3198},
+  Author                   = {T.S. van Albada, et al.},
+  Journal                  = {Astrophysical Journal, Part 1},
+  Year                     = {1985},
+
+  Month                    = {Aug.},
+  Pages                    = {305-313},
+  Volume                   = {295},
+
+  Owner                    = {max},
+  Timestamp                = {2017.11.26}
+}
+
+@Book{tietze,
+  Title                    = {Halbleiter-Schaltungstechnik},
+  Author                   = {U. Tietze, C. Schenk},
+  Publisher                = {Berlin ; Heidelberg : Springer Vieweg},
+  Year                     = {2016},
+  Volume                   = {15},
+
+  Doi                      = {10.1007/978-3-662-48355-8},
+  Owner                    = {max},
+  Timestamp                = {2017.11.11}
+}
+
+@Article{VRubin,
+  Title                    = {Rotational properties of 21 SC galaxies with a large range of luminosities and radii, from NGC 4605 /R = 4kpc/ to UGC 2885 /R = 122 kpc/},
+  Author                   = {Vera C. Rubin, et al.},
+  Journal                  = {Astrophysical Journal, Part 1},
+  Year                     = {1980},
+  Pages                    = {471-487},
+  Volume                   = {238},
+
+  Owner                    = {max},
+  Timestamp                = {2017.11.25}
+}
+
+@Article{zwicky,
+  Title                    = {Die Rotverschiebung von extragalaktischen Nebeln},
+  Author                   = {Fritz Zwicky},
+  Journal                  = {Helvetica Physica Acta},
+  Year                     = {1933},
+  Pages                    = {110},
+  Volume                   = {6},
+
+  Doi                      = {10.5169/seals-110267},
+  Owner                    = {max},
+  Timestamp                = {2017.11.11}
+}
+

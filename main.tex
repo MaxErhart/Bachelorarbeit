@@ -1,0 +1,189 @@
+\documentclass{include/thesisclass}
+% Main File - Based on thesisclass.cls
+% Comments are mostly in English
+% ------------------------------------------------------------------------------
+% Further files in folder:
+%  - include/cmds.tex (for macros and additional commands)
+%  - include/kitlogo.pdf (for titlepage)
+%  - lit.bib (bibtex bibliography database)
+%  - include/titlepage.tex (for layout of titelpage)
+% ------------------------------------------------------------------------------
+% Useful Supplied Packages:
+% amsmath, amssymb, mathtools, bbm, upgreek, nicefrac,
+% siunitx, varioref, booktabs, graphicx, tikz, multicol
+
+
+
+%% -------------------------
+%% |    Thesis Settings    |
+%% -------------------------
+% english or ngerman (new german für neue deutsche Rechtschreibung statt german)
+\SelectLanguage{ngerman}
+% details on this thesis
+\newcommand{\thesisauthor}{Max Erhart}
+\newcommand{\thesistopic}{Machbarkeitsstudie für den Ionisationskanal eines Prototyp-Detektors zur suche nach Leichter Dunkler Materie}
+\newcommand{\thesisentopic}{}
+\newcommand{\thesislongtopic}{Very long and very detailed description of the very interesting thesis topic (only necessary for pdfsubject tag).}
+\newcommand{\thesisinstitute}{Institut für Experimentelle Kernphysik}
+\newcommand{\thesisreviewerone}{Prof. Dr. G. Drexlin}
+\newcommand{\thesisreviewertwo}{Dr. K. Eitel}
+\newcommand{\thesisadvisorone}{Dr. B. Siebenborn} % to use: enter names and uncomment in titlepg
+\newcommand{\thesisadvisortwo}{}
+\newcommand{\thesistimestart}{} % on titlepage
+\newcommand{\thesistimeend}{} % on titlepage
+\newcommand{\thesistimehandin}{} % on second page 'preamble'
+\newcommand{\thesispagehead}{\thesisentopic} % page heading
+
+
+
+
+
+%% ---------------------
+%% |    PDF - Setup    |
+%% ---------------------
+% This information will appear embed into the PDF file as meta data, but will 
+% not be printed anywhere
+\hypersetup
+{
+    pdfauthor={\thesisauthor},
+    pdftitle={Bachelorarbeit: \thesistopic},
+    pdfsubject={\thesislongtopic},
+    pdfkeywords={kit,physik,bachelor,thesis,\thesisauthor}
+}
+
+
+
+\DeclareSIUnit\year{y}
+
+%% --------------------------------------
+%% |    Settings for Word Separation    |
+%% --------------------------------------
+% Help for separation:
+% In German package the following hints are additionally available:
+% "- = Additional separation
+% "| = Suppress ligation and possible separation (e.g. Schaf"|fell)
+% "~ = Hyphenation without separation (e.g. bergauf und "~ab)
+% "= = Hyphenation with separation before and after
+% "" = Separation without a hyphenation (e.g. und/""oder)
+
+% Describe separation hints here:
+\hyphenation
+{
+    über-nom-me-nen an-ge-ge-be-nen
+    %Pro-to-koll-in-stan-zen
+    %Ma-na-ge-ment  Netz-werk-ele-men-ten
+    %Netz-werk Netz-werk-re-ser-vie-rung
+    %Netz-werk-adap-ter Fein-ju-stier-ung
+    %Da-ten-strom-spe-zi-fi-ka-tion Pa-ket-rumpf
+    %Kon-troll-in-stanz
+}
+
+
+\bibliography{bibly}
+\DefineBibliographyStrings{ngerman}{andothers={et\addabbrvspace al\adddot}}                                    
+
+%% -----------------------
+%% |    Main Document    |
+%% -----------------------
+\begin{document}
+    % Titlepage and ToC
+    \FrontMatter
+
+    \input{include/titlepage}
+    \input{include/preamble}
+
+    \begingroup \let\clearpage\relax    % in order to avoid listoffigures and
+    \tableofcontents                    % listoftables on new pages
+    \endgroup
+    \cleardoublepage
+
+
+
+    % Contents
+    \MainMatter
+
+    \addchap{Einleitung}
+    \input{./chap/einleitung.tex}
+    
+    \chapter{Dunkle Materie}
+    \section{Evidenzen für Dunkle Materie}
+    \input{./chap/EvidenzenFuerDunkleMaterie}
+    \section{Teilchenkandidaten für Dunkle Materie}
+    \input{./chap/TeilchenkandidatenFuerDunkleMaterie}
+    \section{Direkter Nachweis Dunkler Materie}
+    \input{./chap/DirekterNachweisDM}
+    %\section{Methoden zum Nachweis von Dunkler Materie}
+	%\input{./chap/MethodenzumNachweisvonDM}
+    
+	\chapter{Suche nach LDM mit DELight}
+	\input{./chap/DeLightMotivation}
+	\section{Konzept des DELight Experiments}
+	\input{./chap/DeLightAufbau} %TODO CITE 
+	\section{MMC Kalorimeter}
+	\input{./chap/MMC}
+	
+	\chapter{Signal Entstehung und Verstärkung}\label{sec:Entstehung}
+	\input{./chap/SignalEntstehungundVerstaerkung}
+	\section{Shockley-Ramo-Theorem}\label{sec:Ramo}
+	\input{./chap/Shockley-Ramo-Theorem}
+	\section{Luke-Verstärkung}\label{sec:LukeAmp}
+	\input{./chap/NTL}
+	
+	\chapter{Konzept für die Prototyp Verstärkerelektronik}\label{sec:Elektronik}
+	\section{HEMT Grundlagen}
+	\input{./chap/HEMT}
+	\section{Rauschen}\label{sec:Rauschen}
+	\input{./chap/Rauschen}
+	\section{Ausleseelektronik}\label{sec:Ausleseelektronik}
+	\input{./chap/Ausleseelektronik}
+	%TODO BANDWIDTH CALCULATIONS
+	\section{Verstärker}\label{sec:Amp}
+	\input{./chap/Amp}
+	\section{Experimenteller Aufbau}
+	\input{./chap/ExperimentellerAufbau}
+
+    \chapter{Auswertung der aufgenommenen Daten}
+    \input{./chap/AuswertungEinleitung}
+    \section{Temperatur- und Frequenzabhängigkeit der Verstärkung}\label{sec:AuswertungAmp}
+    \input{./chap/AuswertungAmp}
+    \section{Vergleich der Rauschspektren bei verschiedenen Temperaturen}
+    \input{./chap/AuswertungRauschen}
+    \section{Energieauflösung}
+	\input{./chap/energyres}
+    
+    \chapter{Ausblick}
+    \input{./chap/Conclusion}
+
+
+
+    % appendix for more or less interesting calculations
+
+    % to make the appendix appear in ToC without number. \appendixname = 
+    % Appendix or Anhang (depending on chosen language)
+    %\input{./chap/appendix.tex} %\cleardoublepage
+
+
+
+    % Bibliography
+    \TheBibliography
+
+    % BIBTEX
+    % use if you want citations to appear even if they are not referenced to: 
+    % \nocite{*} or maybe \nocite{Kon64,And59} for specific entries
+    %\nocite{*}
+    %\bibliographystyle{abbrv}
+    
+    \printbibliography
+	\listoffigures \addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+    %\listoftables
+    \Appendix
+    \chapter{\appendixname} %\addcontentsline{toc}{chapter}{\appendixname}
+    \section{Optimal Filtering}\label{sec:OpFiltering}
+    \input{./chap/OptFilt}\label{sec:OptFilt}
+    \section{Layout}
+    \input{./chap/Layout}
+    % THEBIBLIOGRAPHY
+    %\begin{thebibliography}{000}
+    %    \bibitem{ident}Entry into Bibliography.
+    %\end{thebibliography}
+\end{document}

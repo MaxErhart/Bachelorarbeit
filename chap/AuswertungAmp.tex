@@ -1,0 +1,108 @@
+Um die Temperaturabhängigkeit und die Frequenzabhängigkeit der Verstärkung zu bestimmen wird ein Signalgenerator an der kalte Elektronik angeschlossen wo im Normalfall der Detektor angeschlossen wird.
+Mit dem Signalgenerator können Sinussignale verschiedener Frequenzen erzeugt werden.
+Das vom Signalgenerator erzeugte Eingangssignal sowie das Ausgangssignal des Verstärkers werden mit dem Oszilloskop aufgenommen.
+Die Aufgenommenen Datenspuren werden geglättet um bursts des Signalgenerator zu entfernen.
+Danach wird aus dem Verhältnis der Amplituden von Ausgangs- und Eingangssignal die Verstärkung bei gegebener Frequenz bestimmt.
+
+\begin{minipage}[!c]{\textwidth}
+
+
+\begin{minipage}[c]{\textwidth}
+\begin{minipage}[c]{0.5\textwidth}
+\includegraphics[width=\textwidth]{./fig/Gain/G33Warm.pdf}
+\end{minipage}
+\begin{minipage}[c]{0.5\textwidth}
+\includegraphics[width=\textwidth]{./fig/Gain/G33Cold.pdf}
+\end{minipage}
+\vspace{-0.45cm}
+\captionof{subfigure}{Verstärkung der kalten Elektronik unter Verwendung des HEMTs ATF-33143\cite{ATF-33143}. Links: Verstärkung bei Raumtemperatur ($\SI{291}{\kelvin}$) und einer Biasspannung von $\SI{-0.6}{\volt}$. Rechts: Verstärkung bei flüssig Stickstoff Temperatur ($\SI{77}{\kelvin}$) und einer Biasspannung von $\SI{-1}{\volt}$.}
+\label{subfig:33}
+\end{minipage}
+
+\begin{minipage}[c]{\textwidth}
+
+\begin{minipage}[c]{0.5\textwidth}
+\includegraphics[width=\textwidth]{./fig/Gain/G34Warm.pdf}
+\end{minipage}
+\begin{minipage}[c]{0.5\textwidth}
+\includegraphics[width=\textwidth]{./fig/Gain/G34Cold.pdf}
+\end{minipage}
+\vspace{-0.45cm}
+\captionof{subfigure}{Verstärkung der kalten Elektronik unter Verwendung des HEMTs ATF-54143\cite{ATF-34143}. Links: Verstärkung bei Raumtemperatur ($\SI{291}{\kelvin}$) und einer Biasspannung von $\SI{-0.74}{\volt}$. Rechts: Verstärkung bei flüssig Stickstoff Temperatur ($\SI{77}{\kelvin}$) und einer Biasspannung von $\SI{-0.94}{\volt}$.}
+\label{subfig:34}
+\end{minipage}
+
+\begin{minipage}[c]{\textwidth}
+
+\begin{minipage}[c]{0.5\textwidth}
+\includegraphics[width=\textwidth]{./fig/Gain/G54Warm.pdf}
+\end{minipage}
+\begin{minipage}[c]{0.5\textwidth}
+\includegraphics[width=\textwidth]{./fig/Gain/G54Cold.pdf}
+\end{minipage}
+\vspace{-0.45cm}
+\captionof{subfigure}{Verstärkung der kalten Elektronik unter Verwendung des HEMTs ATF-54143\cite{ATF-54143}. Links: Verstärkung bei Raumtemperatur ($\SI{291}{\kelvin}$) und einer Biasspannung von $\SI{0.26}{\volt}$. Rechts: Verstärkung bei flüssig Stickstoff Temperatur ($\SI{77}{\kelvin}$) und einer Biasspannung von $\SI{0.38}{\volt}$.}
+\vspace{-0.4cm}
+\captionof{figure}{An die Daten (schwarz) ist die Übertragungsfunktion wie sie erwartet wird angepasst (blau). Die Konstante $A$ gibt die Verstärkung im konstanten Bereich an. Das inverse der Konstanten B die Grenzfrequenz des Tiefpass und das inverse der Konstanten C die Grenzfrequenz des Hochpass.}
+\label{fig:Gain}
+\end{minipage}
+\end{minipage}
+
+Die bei geschlossenem Relais aufgenommenen Daten sind in Abbildung \ref{fig:Gain} schwarz dargestellt.
+An die Daten wurde die aus der Theorie erwartete Übertragungsfunktion angepasst (blau).
+Diese setzt sich zusammen aus dem Hochpass welcher von der Kapazität $C_c$ und dem Widerstand $R_b$ gebildet wird mit der Grenzfrequenz $f^H_{-3\,\mathrm{db}} = \SI{5.9}{\hertz}$.
+Und dem Tiefpass am Ausgang des Verstärkers aus $C_o$ und $R_o$ mit der Grenzfrequenz $f^T_{-3\,\mathrm{db}} = \SI{133}{\kilo\hertz}$.
+\begin{equation}
+U_a = U_e \frac{V_Uf}{\sqrt{1+(f/f^H_{-3\,\mathrm{db}})^2}\sqrt{1+(f/f^T_{-3\,\mathrm{db}})^2}}
+\end{equation}
+
+Zu sehen ist, dass die aus den Daten ermittelte Grenzfrequenz des Tiefpass in allen Fällen ungefähr einen Faktor $10$ kleiner ist als die erwartete.
+Dies könnte auf die in der Theorie nicht berücksichtige Kapazität der Kabel liegen.
+Um diesem Effekt entgegen zu wirken kann der Widerstand $R_o$ kleiner gewählt werden.
+
+Der Effekt des Hochpasses ist nicht zu sehen da die aufgenommenen Daten nur bis zu einer minimalen Frequenz von $\SI{10}{\hertz}$ gehen.
+Daher wurde für die aus der Theorie vorhergesagte Grenzfrequenz verwendet.
+Ausgenommen davon sind die beiden HEMTs ATF-34143 und ATF-33143 welche beide im Kalten eine deutlich höhere Grenzfrequenz des Tiefpass aufweisen.
+
+\begin{figure}[!b]
+\begin{center}
+\includegraphics[width=0.65\textwidth]{./fig/Gain/G33WarmMarch21.png}
+\vspace{-0.5cm}
+\caption{Verstärkung des HEMTs ATF-33143 bei geschlossenem Relais, einem Drainwiderstand von $R_d = \SI{192}{\Omega}$ und einer Biasspanung von $\SI{-0.65}{\volt}$.}
+\label{fig:33WarmGain100}
+\end{center}
+\end{figure}
+
+Die Verstärkung aller drei HEMTs liegt in der Größenordnung von $10$ und ändern sich nur minimal mit der Temperatur.
+Die aus der Theorie erwartete Verstärkung gegeben durch $-g_m R_d$ liegt allerdings deutlich höher bei $200\-- 400$ je nach HEMT.
+Dies könnte zum einen daran liegen, dass die HEMTs am absoluten Rand ihres Ausgangskennlinienfeldes betrieben werden, d.h. mit deutlich weniger Strom als sie konzipiert sind.
+Um weiter in die Mitte des Kennlinienfeldes zu gelangen muss der Drainwiderstand $R_d$ herabgesetzt werden.
+Die Abbildung \ref{fig:33WarmGain100} zeigt die Verstärkung bei einem Drainwiderstand von $R_d=\SI{192}{\Omega}$ zu sehen ist, dass die Verstärkung beinah unverändert in der Größenordnung von $10$ bleibt die aus der Theorie erwartete Verstärkung allerdings auf $20 \-- 40$ runter geht.
+Außerdem geht die verbrauchte Leistung hoch auf $\sim\SI{10}{\milli\watt}$.
+
+Ein zweiter Grund könnte der Frequenzbereich sein indem die HEMTs verwendet werden.
+Eigentlich sind handelsübliche HEMTs für den hochfrequenten Bereich von $\SI{500}{\mega\hertz}\--\SI{10}{\giga\hertz}$ konzipiert.
+Daher haben sie auch sehr kleine Gate-Drain und Gate-Source Kapazitäten.
+Die CRNS/LPN HEMTs dagegen sind speziell für den niederfrequenten Bereich und niedrigen Leistungsverbrauch ausgelegt.
+Daher kann mit diesen eine deutlich höhere Verstärkung erreicht werden \cite{Phipps:2016mwv}.
+Da diese zusätzlich über deutlich größere Eingangskapazitäten verfügen kann nicht länger der in Abschnitt \ref{sec:Amp} beschriebene Miller-Effekt vernachlässigt werden.
+In diesem Fall kann statt einem Common-Source Verstärker zum Beispiel eine Kaskodenschaltung verwendet werden \cite{Gray}.
+
+In Abbildung \ref{fig:54RClosed} ist die Verstärkung des HEMTS ATF-54143 bei offenem Relais gezeigt.
+Dieser ist der einzige HEMT dessen Leckstrom mit $\SI{0.1}{\pico\ampere}$ klein genug ist bei flüssig Stickstoff Temperaturen sodass die Biasspannung über einen längeren Zeitraum gehalten wird.
+Der Effekt des Hochpass entfällt und die Übertragungsfunktion wird zu
+\begin{equation}
+U_a = U_e \frac{V_U}{\sqrt{1+(f/f^T_{-3\,\mathrm{db}})^2}}.
+\end{equation}
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=0.65\textwidth]{./fig/Gain/G54ColdROpen.png}
+\vspace{-0.5cm}
+\caption{Verstärkung des HEMTs  ATF-54143 bei offenem Relais und einer Biasspannung von $\SI{0.371}{\volt}$.}
+\label{fig:54RClosed}
+\end{center}
+\end{figure}
+
+
+

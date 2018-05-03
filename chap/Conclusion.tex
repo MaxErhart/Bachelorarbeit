@@ -1,0 +1,19 @@
+Ein Detektor mit Vakuum separierte Elektrode hat den Vorteil einer besseren Energieauflösung im Wärmekanal auf kosten eines abgeschwächten Signals im Ionisationskanal.
+Um die Luke-Verstärkung zu überprüfen ist es notwendig das Ionisationssignal in beiden Kanälen auszulesen.
+im Ionisationskanal sollen dazu Signale von $\gamma$-Quellen im $\SI{}{\kilo\electronvolt}$ Bereich sichtbar sein.
+In dieser Arbeit wurde eine Verstärkerelektronik entwickelt um den Ionisationskanal auszulesen sie fungiert gleichzeitig als Impedanzwandler damit der Signalstrom nicht von den langen Kabeln und der Digitalisierung belastet wird.
+Diese ist dazu ausgelegt ohne zusätzliche Heizung im Kryostaten bei $\SI{4}{\kelvin}$ zu operieren.
+Dazu wurden handelsübliche HEMTs verwendet mit dem Vorteil der leichten Verfügbarkeit aber unter großen Leckströmen und großem niederfrequentem Rauschen leiden.
+Die Elektronik wurde bei Raumtemperatur und flüssig Stickstofftemperatur getestet.
+Bei Raumtemperatur ist der Leckstrom aller HEMTs zu groß um die Elektronik wie vorgesehen mit Vorgespannten Kondensatoren und offenem Relais zu operieren.
+Mit abnehmender Temperatur nimmt allerdings auch der Leckstrom ab, sodass es möglich war einen HEMT über einen längeren Zeitraum bei offenem Relais zu operieren.
+Mit allen HEMTs wurde eine Spannungsverstärkung in der Größenordnung von $\mathcal{O}(10)$ erreicht.
+Das Rauschen ist etwa einen Faktor $10$ größer als das der EDELWEISS-III bei $\SI{4}{\kelvin}$ Elektronik\cite{EDWIII}.
+Ein Teil des Rauschen kann durch den siedenden Stickstoff verursacht sein in welchen die Elektronik eingetaucht wurde.
+Dafür spricht, dass das Rauschen im Kalten größer wurde.
+Die selbe Beobachtung wurde auch schon in der Arbeit von Axel Gullasch\cite{Gullasch2015} gemacht.
+Ein Leckstrom von $\SI{1,4}{\femto\ampere}$ wurde bestimmt.
+Aus dem Leistungsdichtespektrum des Rauschen wurde mittels der optimal filtering Methode(siehe Abschnitt \ref{sec:OptFilt}) die Energieauflösung anhand des erwarteten Signalpuls zu $\frac{1}{a-b}\SI{1,31}{\kilo\electronvolt}$ bestimmt.
+Um die Energieauflösung mit der EDELWEISS-III Elektronik von $\SI{500}{\electronvolt}$ zu vergleichen wurde auch eine $\SI{150}{\pico\farad}$ Detektorkapazität angenommen.
+Die Elektronik sollte noch unter den Bedingungen wie sie im Experiment gegeben sind, $\SI{4}{\kelvin}$ und ein Richtiger Detektor, getestet werden.
+Um die Schaltung noch weiter zu optimieren besteht die Möglichkeit CNRS/LPN HEMTs zu verwenden welche hervorragende Eigenschaften für unsren Anwendungsfall aufweisen. 
