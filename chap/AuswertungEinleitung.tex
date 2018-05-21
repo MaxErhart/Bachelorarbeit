@@ -1,15 +1,15 @@
 Eine Prototyp Verstärkerelektronik nach dem in Kapitel \ref{sec:Elektronik} dargestellten Konzept wurde angefertigt und ist in Abbildung \ref{fig:ElektronikBilder} zu sehen.
-In diesem Kapitel gehe ich auf die damit aufgenommenen Daten ein.
+In diesem Kapitel werden die damit aufgenommenen Daten ausgewertet.
 
-Im Vorfeld muss allerdings erwähnt werden, dass die Auswahl der verwendeten handelsüblichen HEMTs alle unter einem enorm großen Leckstrom leiden.
-Die Datenblätter geben Ströme in der Größenordnung von $\SI{1}{} \-- \SI{10}{\micro\ampere}$ bei Raumtemperatur an \cite{ATF-54143, ATF-33143, ATF-34143}.
-Das heißt bei geöffneten Relais entladen sich die Kondensatoren zu schnell sodass der Verstärker aus seinem Arbeitspunkt heraus driftet.
-Grob überschlagen ergibt sich für die Zeitkonstante der Kondensatorentladung
+Im Vorfeld muss allerdings erwähnt werden, dass alle handelsüblichen HEMTs, welche verwendet wurden, unter einem großen Leckstrom leiden.
+Die Datenblätter geben Leckströme in der Größenordnung von $\SI{1}{} \-- \SI{10}{\micro\ampere}$ bei Raumtemperatur an \cite{ATF-54143, ATF-33143, ATF-34143}.
+Das heißt bei geöffneten Relais entladen sich die Kondensatoren zu schnell, sodass der Verstärker aus seinem Arbeitspunkt heraus driftet.
+Grob genähert ergibt sich für die Zeitkonstante der Kondensatorentladung
 \begin{equation}
 \tau = RC =  \frac{U_{Bias}}{I_{Leck}}C  = \frac{\SI{100}{\milli\volt}\SI{100}{\pico\farad}}{\SI{1}{\micro\ampere}} = \SI{10}{\micro\second}.
 \end{equation}
 Daher werden die Messungen bei Raumtemperatur mit geschlossenen Relais durchgeführt.
-Mit kleiner werdenden Temperaturen nimmt der Leckstrom allerdings ab sodass es bei flüssig Stickstoff Temperaturen möglich war den HEMT ATF-54143 bei offenen Relais zu operieren.
+Bei kleineren Temperaturen nimmt der Leckstrom aber ab, sodass es bei flüssig Stickstoff Temperaturen möglich war die kalte Elektronik mit dem HEMT ATF-54143 bei offenen Relais zu verwenden.
 Sind die Relais der kalten Elektronik geschlossen muss insbesondere berücksichtigt werden, dass thermisches Rauschen der Widerstände hinzu kommt und dass die Kombination aus der Koppelkapazität $C_c$ und Biaswiderstand $R_b$ einen Hochpass mit der Grenzfrequenz $f_{-3\,\mathrm{db}}=1/2\pi R_bC_c=\SI{5.9}{\hertz}$ darstellen.
 Durch größere Wahl des Biaswiderstand könnten beide Effekte weiter minimiert werden.
 

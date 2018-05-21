@@ -21,9 +21,9 @@
 \SelectLanguage{ngerman}
 % details on this thesis
 \newcommand{\thesisauthor}{Max Erhart}
-\newcommand{\thesistopic}{Machbarkeitsstudie für den Ionisationskanal eines Prototyp-Detektors zur suche nach Leichter Dunkler Materie}
+\newcommand{\thesistopic}{Machbarkeitsstudie für den Ionisationskanal eines Prototyp-Detektors zur Suche nach Leichter Dunkler Materie}
 \newcommand{\thesisentopic}{}
-\newcommand{\thesislongtopic}{Very long and very detailed description of the very interesting thesis topic (only necessary for pdfsubject tag).}
+\newcommand{\thesislongtopic}{}
 \newcommand{\thesisinstitute}{Institut für Experimentelle Kernphysik}
 \newcommand{\thesisreviewerone}{Prof. Dr. G. Drexlin}
 \newcommand{\thesisreviewertwo}{Dr. K. Eitel}
@@ -34,8 +34,7 @@
 \newcommand{\thesistimehandin}{} % on second page 'preamble'
 \newcommand{\thesispagehead}{\thesisentopic} % page heading
 
-
-
+\usepackage[nohyperlinks, printonlyused]{acronym}
 
 
 %% ---------------------
@@ -82,10 +81,13 @@
 \bibliography{bibly}
 \DefineBibliographyStrings{ngerman}{andothers={et\addabbrvspace al\adddot}}                                    
 
+
 %% -----------------------
 %% |    Main Document    |
 %% -----------------------
 \begin{document}
+
+
     % Titlepage and ToC
     \FrontMatter
 
@@ -118,25 +120,25 @@
 	\chapter{Suche nach LDM mit DELight}
 	\input{./chap/DeLightMotivation}
 	\section{Konzept des DELight Experiments}
-	\input{./chap/DeLightAufbau} %TODO CITE 
+	\input{./chap/DeLightAufbau}  
 	\section{MMC Kalorimeter}
 	\input{./chap/MMC}
 	
-	\chapter{Signal Entstehung und Verstärkung}\label{sec:Entstehung}
+	\chapter{Theoretische Betrachtungen zur Signal Entstehung und Rauschen}\label{sec:Entstehung}
 	\input{./chap/SignalEntstehungundVerstaerkung}
 	\section{Shockley-Ramo-Theorem}\label{sec:Ramo}
 	\input{./chap/Shockley-Ramo-Theorem}
 	\section{Luke-Verstärkung}\label{sec:LukeAmp}
 	\input{./chap/NTL}
-	
-	\chapter{Konzept für die Prototyp Verstärkerelektronik}\label{sec:Elektronik}
-	\section{HEMT Grundlagen}
+	\section{HEMT Übersicht}
 	\input{./chap/HEMT}
 	\section{Rauschen}\label{sec:Rauschen}
 	\input{./chap/Rauschen}
-	\section{Ausleseelektronik}\label{sec:Ausleseelektronik}
+	
+	\chapter{Konzept für Entwurf und Aufbau der Prototyp Verstärkerelektronik}\label{sec:Elektronik}
+	\input{./chap/EinleitungKonzept}
+	\section{Kalte Elektronik}\label{sec:Ausleseelektronik}
 	\input{./chap/Ausleseelektronik}
-	%TODO BANDWIDTH CALCULATIONS
 	\section{Verstärker}\label{sec:Amp}
 	\input{./chap/Amp}
 	\section{Experimenteller Aufbau}
@@ -148,13 +150,11 @@
     \input{./chap/AuswertungAmp}
     \section{Vergleich der Rauschspektren bei verschiedenen Temperaturen}
     \input{./chap/AuswertungRauschen}
-    \section{Energieauflösung}
+    \section{Bestimmen der Energieauflösung}
 	\input{./chap/energyres}
     
     \chapter{Ausblick}
     \input{./chap/Conclusion}
-
-
 
     % appendix for more or less interesting calculations
 
@@ -173,8 +173,11 @@
     %\nocite{*}
     %\bibliographystyle{abbrv}
     
-    \printbibliography
-	\listoffigures \addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+    \printbibliography \addcontentsline{toc}{chapter}{Literaturverzeichnis}
+	\listoffigures %\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+	\chapter*{Abkürzungsverzeichnis}
+	\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+	\input{./chap/acronyms}
     %\listoftables
     \Appendix
     \chapter{\appendixname} %\addcontentsline{toc}{chapter}{\appendixname}

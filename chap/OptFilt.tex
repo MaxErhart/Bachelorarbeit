@@ -2,28 +2,29 @@ In diesem Abschnitt werden ein paar grundlegende Erkenntnisse der optimal filter
 Die Darstellung orientiert sich anhand \cite{Golwala2000, Enss2005}.
 
 \subsection{Diskrete Fouriertransformation}
-In der Realität können Signale nicht kontinuierlich Abgetastet werden und nur über einen begrenzten Zeitraum aufgenommen.
+In der Realität können Signale nicht kontinuierlich abgetastet werden und nur über einen begrenzten Zeitraum aufgenommen.
 Die Fouriertransformation muss daher für den diskreten Fall angepasst werden zu
 \begin{align*}
 \widetilde{v}_n &= \frac{1}{N}\sum_{k=-N/2}^{N/2} v_k e^{-i2\pi f_n t_k} \\
 v_k &= \sum_n \widetilde{v}_{n=n=-N/2}^{N/2} e^{i2\pi f_n t_k}
 \end{align*}
-mit der Spurlänge $N=Tf_s$ welche sich aus der Spurdauer $T$ und sample Rate $f_s$ ergibt, Zeitpunkten $t_k = k\Delta T = k/f_s$ und Frequenzen $f_n = n/T$.
-Zu sehen ist, dass es zu Frequenz bins der Breite $f_{n+1}-f_n=1/T$ kommt aufgrund der endlichen Spurdauer das gleich Prinzip tritt bei der Unschärferelation auf.
-Außerdem ist die Bandbreite durch die Nyquest-Frequenz $f_{Nq}=f_{N/2}=N/2T=f_s/2$, der halben Abtastrate, nach oben und unten begrenzt.
+der Spurlänge $N=Tf_s$, welche sich aus der Spurdauer $T$ und Sample Rate $f_s$ ergibt, Zeitpunkten $t_k = k\Delta T = k/f_s$ und Frequenzen $f_n = n/T$.
+Aufgrund der endliche Spurdauer kommt es zu Frequenzbins der Breite $f_{n+1}-f_n=1/T$.
+Aufgrund der endlichen Abtastrate wird die Bandbreite durch die Nyquest-Frequenz $f_{Nq}=f_{N/2}=N/2T=f_s/2$, welche der halben Abtastrate entspricht, begrenzt.
 
 \subsection{Rauschen}
-Die Fluktuationen der Spannung werden als Gaussverteilt angenommen mit der Varianz $\langle\left[v(t)\right]^2\rangle$.
-Die Varianz beschreibt das Rauschen allerdings nicht vollständig da Korrelationen des Signals nicht berücksichtigt werden.
-Korrelationen treten auf da eine Fluktuation der Spannung mit einer bestimmte Zeitkonstante $\tau$ abfällt und daher $v(t)$ Informationen über $v(t+\tau)$ enthält.
-Die Autokorrelationsfunktion $R(\tau)$ enthält diese
+Die Fluktuationen der Spannung werden als gaussverteilt angenommen mit der Varianz $\langle\left[v(t)\right]^2\rangle$.
+Die Varianz beschreibt das Rauschen allerdings nicht vollständig, da Korrelationen des Signals nicht berücksichtigt werden.
+Korrelationen treten auf, da eine Fluktuation der Spannung mit einer bestimmte Zeitkonstante $\tau$ abfällt und daher $v(t)$ Informationen über $v(t+\tau)$ enthält.
+Die Autokorrelationsfunktion $R(\tau)$ berücksichtigt die Korrelation
 \begin{align*}
 R(\tau) &= \langle v(t)v(t+\tau)\rangle \\
 &= \lim_{T\rightarrow \infty}\frac{1}{T}[v\otimes v](\tau) \\
 &= \lim_{T\rightarrow \infty}\frac{1}{T}\int_{-T/2}^{T/2}\,dt\, v(t)v(t+\tau)
 \end{align*}
 $\otimes$ steht hier für die Kreuzkorrelation.
-Die Informationen sind auch im Frequenzspektrum des Rauschen enthalten mit dem Vorteil, dass für lineare Systeme das Rauschen unterschiedlicher Frequenzen unkorreliert ist.
+Äquivalent kann das Rauschen im Frequenzraum dargestellt werden.
+Dies hat den Vorteil, dass für lineare Systeme das Rauschen unterschiedlicher Frequenzen nicht korreliert ist.
 Die spektrale Leistungsdichte $J(f)$ ist gegeben durch die Fouriertransformation der Autokorrelationsfunktion und hat die Einheit $\SI{}{\volt^2\per\hertz}$
 \begin{equation}
 J(f) = \lim_{T\rightarrow \infty}\int_{-T}^{T}\, dt\, R(t) e^{-jwt}.
@@ -48,12 +49,13 @@ hierbei wurde im dritten Schritt ausgenutzt, dass für die Fouriertransformation
 \begin{equation}
 [g\otimes h](t) \stackrel{\mathcal{FT}}{=} \widetilde{g}^*(f)\widetilde{h}(f).
 \end{equation}
-Für den Fall diskreter Signale wird die Ersetzung $\widetilde{v}(f)\rightarrow T\widetilde{v}_n$ gemacht und der Grenzwert fallen gelassen
+Für den Fall diskreter Signale wird die Ersetzung $\widetilde{v}(f)\rightarrow T\widetilde{v}_n$ gemacht und der Grenzwert fallen gelassen.
+Dann folgt
 \begin{equation}
 J(f_n) = \frac{N}{f_s}|\widetilde{v}_n|^2.
 \end{equation}
 Dies ist die übliche Form um $J(f)$ zu bestimmen.
-Mehrere Spuren ohne Signal werden aufgenommen, $|\widetilde{v}_n|^2$ mittels DFT bestimmt und ihr Mittelwert bestimmt.
+Mehrere Spuren ohne Signal werden aufgenommen, $|\widetilde{v}_n|^2$ aus der DFT bestimmt und über diese gemittelt.
 Werden nur die positiven Frequenzen betrachtet muss die doppelseitige spektrale Leistungsdichte $J(f)$ um einen Faktor zwei korrigiert werden
 \begin{equation}
 J_{ss}(f) = 2J(f) \quad f > 0.
@@ -67,7 +69,7 @@ v(t) = As(t) + n(t)
 mit einer Rauschspur $n(t)$ und der erwarteten Pulsform $s(t)$ mit Amplitude $A$.
 Die spektrale Leistungsdichte sei gegeben durch $J(f)$.
 Um die beste Amplitude zu bestimmen wird ein $\chi^2$-Fit der erwarteten Pulsform an den realen Puls durchgeführt.
-Der Fit wird im Frequenzraum durchgeführt da Unterschiedliche Frequenzanteile unkorreliert sind
+Der Fit wird im Frequenzraum durchgeführt da unterschiedliche Frequenzanteile nicht korreliert sind
 \begin{equation}
 \chi^2 = \int_{-\infty}^\infty\, df \frac{|\widetilde{v}(f) - A\widetilde{s}(f)|^2}{J(f)}.
 \end{equation}
@@ -77,7 +79,7 @@ Durch die Minimierung von $\chi^2$ erhält man für den besten Schätzer
 \end{equation}
 Für die Varianz auf den Schätzer ergibt sich
 \begin{equation}
-\sigma^2_A = \left[\frac{1}{2}\frac{\partial^2}{\partial A^2}\chi^2\right]^{-1} = \left[\int_{-\infty}^\infty\, df \frac{|\widetilde{s}(f)|^2}{J(f)} \right ]^{-1}.
+\sigma^2_A = \left[\frac{1}{2}\frac{\partial^2}{\partial A^2}\chi^2\right]^{-1} = \left[\int_{-\infty}^\infty\, df \frac{|\widetilde{s}(f)|^2}{J(f)} \right ]^{-1} = \left[2\int_{0}^\infty\, df \frac{|\widetilde{s}(f)|^2}{J(f)} \right ]^{-1}.
 \end{equation}
 Die Varianz auf die Amplitude bestimmt die beste erreichbare Auflösung bei der gegebenen Pulsform.
 Für den Übergang zum diskreten Fall werden die Ersetzungen 
@@ -85,9 +87,9 @@ Für den Übergang zum diskreten Fall werden die Ersetzungen
 \widetilde{s}^*(f) &\rightarrow \frac{N}{f_s} \widetilde{s}^*_n \\
 \widetilde{s}(f) &\rightarrow \frac{N}{f_s} \widetilde{s}_n \\
 J(f) &\rightarrow J(f_n) \\
-\int_{-\infty}^\infty\, df &\rightarrow \frac{f_s}{N}\sum_{n=-N/2}^{N/2}
+\int_{0}^\infty\, df &\rightarrow \frac{f_s}{N}\sum_{n=0}^{N/2}
 \end{align*}
 und führen zu
 \begin{equation}
-\sigma^2_A = \left[\frac{N}{f_s} \sum_{n=-N/2}^{N/2} \frac{|\widetilde{s}_n|^2}{J(f_n)}\right]^{-1}.
+\sigma^2_A = \frac{N}{f_s}\left[2 \sum_{n=0}^{N/2} \frac{|\widetilde{s}_n|^2}{J(f_n)}\right]^{-1}.
 \end{equation}

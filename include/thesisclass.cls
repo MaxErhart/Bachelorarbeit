@@ -1,4 +1,4 @@
-%% LaTeX2e class for diploma theses
+%WA%% LaTeX2e class for diploma theses
 %% Based on wissdoc.cls by Roland Bless, 1996-2001
 %% bless@telematik.informatik.uni-karlsruhe.de
 %%
@@ -19,7 +19,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{include/thesisclass}
-\LoadClass[a4paper,12pt,titlepage]{scrbook}
+\LoadClass[a4paper,10pt,titlepage]{scrbook}
 
 
 

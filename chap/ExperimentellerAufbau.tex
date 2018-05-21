@@ -1,7 +1,6 @@
-Das Ziel des Versuchsaufbaus ist es die Verstärkung und das Rauschen der Elektronik aufzunehmen unter möglichst ähnlichen Bedingungen wie sie beim Einsatz im Kryostaten mit einem Detektor gegeben sind.
-Dazu wird die kalte Elektronik wie sie in den Abschnitten \ref{sec:Ausleseelektronik} und \ref{sec:Amp} dargestellt ist verwendet.
-Für den Verstärker wurde eine Auswahl verschiedener handelsüblicher HEMTs verwendet.
-
+Die Verstärkerelektronik soll zuerst bei Raumtemperatur und Flüssigstickstoff Temperatur getestet werden.
+Dabei soll das Rauschen und die Übertragungsfunktion der kalten Elektronik, wie sie in den Abschnitten \ref{sec:Ausleseelektronik} und \ref{sec:Amp} dargestellt ist, bestimmt werden.
+Der Versuchsaufbau sollte den Bedingungen, welche beim Einsatz im Kryostaten mit Detektor gegeben sind, möglichst nahe sein.
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{./fig/Box.pdf}
@@ -10,28 +9,25 @@ Für den Verstärker wurde eine Auswahl verschiedener handelsüblicher HEMTs ver
 \label{fig:WarmeElektronik}
 \end{center}
 \end{figure}
+Dazu muss der in Abb. \ref{sec:Ausleseelektronik} gezeigte Schaltplan um einen dummy detector ergänzt werden.
+Dieser entspricht einer Kapazität zu Ground deren Größe gleich der Detektorkapazität $C_d$ ist.
+Als Detektorkapazität wurden $C_d=\SI{30}{\pico\farad}$ verwendet, welche aus den Abmessungen des Detektors und der Elektrode bestimmt wurde.
 
-Um die Handhabung der kalten Elektronik zu vereinfachen gibt es die in Abbildung \ref{fig:WarmeElektronik} gezeigte warme Elektronik.
+Um die Handhabung der kalten Elektronik zu vereinfachen wurde die in Abbildung \ref{fig:WarmeElektronik} gezeigte warme Elektronik entwickelt.
 Mit dem dreistufigen Kippschalter werden die Relais geschaltet.
-Die Spannung $U_d$ und der Widerstand $R_d$ ist der Teil des Verstärkers welcher in Abbildung \ref{fig:Amp} außerhalb des Kryostaten ist.
-Mit den $\SI{-1.5}{\volt}$ und dem $\SI{100}{\kilo\ohm}$ Potentiometer lässt sich die gewünschte Verstärker Biasspannung eingestellt.
+Die Spannung $U_d$ und der Widerstand $R_d$ ist der Teil des Verstärkers, welcher in Abbildung \ref{fig:Amp} außerhalb des Kryostaten ist.
+Mit den $\SI{\pm 1.5}{\volt}$ und dem $\SI{100}{\kilo\ohm}$ Potentiometer lässt sich die gewünschte Verstärker Biasspannung einstellen.
 Um das Rauschen zu minimieren und um Rückkopplung über die Spannungsquelle zu vermeiden wird die Drainspannung und die Verstärker Biasspannung mit unabhängigen Batterien versorgt.
 Die Spannungen zum Schalten der Relais werden mittels Generator aufgebracht.
-Im Warmen befindet sich außerdem ein Oszilloskop mit welchem das in Abbildung \ref{fig:Ausleseelektronik} dargestellte Ausgangssignal aufgenommen wird.
-Und ein Signalgenerator mit welchem ein künstliches Signal einer bestimmten Frequenz erzeugt werden kann um die Verstärkung zu bestimmen.
-Die Detektor Biasspannung ist für die Funktionsweise der Elektronik unbedeutend und wurde daher auf $\SI{0}{\volt}$ gesetzt.
+Im Warmen befindet sich außerdem ein Oszilloskop, mit welchem das Ausgangssignal aufgenommen wird.
+Außerdem befindet sich im Warmen ein Signalgenerator, welcher ein Signal einer bestimmten Frequenz simuliert um die Übertragungsfunktion zu bestimmen.
+Die Detektor Biasspannung ist für die Funktionsweise der Elektronik unbedeutend und wird daher auf $\SI{0}{\volt}$ gesetzt.
 In Abbildung \ref{fig:ElektronikBilder} sind Bilder der kalten Elektronik (oben Vorder- und Rückansicht) sowie der warmen Elektronik (unten) gezeigt.
 
 Die Kühlung der kalten Elektronik findet mit flüssigem Stickstoff statt.
-Dabei wird auf eine aufwendige Temperaturregelung verzichtet weshalb nur das Verhalten bei Raumtemperatur und flüssig Stickstoff Temperatur untersucht wird.
+Dabei wird auf eine aufwendige Temperaturregelung verzichtet weshalb nur das Verhalten bei Raumtemperatur und Flüssigstickstoff Temperatur untersucht wird.
 Schließlich befindet sich die kalte Elektronik in einem Faraday-Käfig um sie gegenüber elektromagnetischer Strahlung abzuschirmen.
-Allerdings kann elektromagnetische Strahlung trotzdem über die langen Kabel zur Versorgung der Biasspannung und Drainspannung in die Elektronik gelangen.
-
-Um den Aufbau so authentisch wie möglich zu gestalten in der kalten Elektronik ein \textit{dummy detector} eingebaut.
-Dieser entspricht einer Kapazität zu Ground der selben Größe wie die Detektorkapazität $C_d$.
-
-Die Daten der kalten Elektronik werden für verschiedenen handelsübliche HEMTs aufgenommen.
-
+Allerdings kann elektromagnetische Strahlung trotzdem über die Kabel der Spannungsversorgung und der Signalleitungen das Signal beeinflussen.
 \begin{figure}[!t]
 \begin{center}
 \includegraphics[width=\textwidth]{./fig/ElektronikBilder.pdf}
